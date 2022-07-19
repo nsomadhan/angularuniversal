@@ -1,0 +1,13 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  playtst:
+    image: angu
+    ports:
+      - "4201:4200"
+    volumes:
+      - ./Playtest:/data/apps
+      - ./npmscript:/data/pm2script
+    environment:
+      - PROJECT=Playtest
+    command: >
+      bash -c "cd /data/apps/ && npm run build:ssr && pm2-runtime /data/pm2script/prod.ecosystem.config.js "
