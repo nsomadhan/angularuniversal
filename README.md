@@ -1,7 +1,10 @@
 # Set up  angular universal with docker and docker-compose
+# STEP
+### step one : Buil container
+sudo docker build -t angu . 
 
-# create Project 
+# step two: create Project 
 sudo docker-compose -f docker-buildangularproject.yaml up --remove-orphans
 
-# serve project as angular universal
+# step three: serve project as angular universal
 sudo docker-compose up --remove-orphans
