@@ -1,9 +1,7 @@
 # Set up  angular universal with docker and docker-compose
 
-# create project 
+# create Project 
+sudo docker-compose -f docker-buildangularproject.yaml up --remove-orphans
 
-# RUN this two command if you develop project in your env, but serve by docker.
-ng new Playtest
-ng add @nguniversal/express-engine
-
-
+# serve project as angular universal
+sudo docker-compose up --remove-orphans
