@@ -1,13 +1,12 @@
 version: "3.9"  # optional since v1.27.0
 services:
-  playtst:
+  angularprojectcreate:
+          # build: .
     image: angu
-    ports:
-      - "4202:4200"
     volumes:
       - ./${PROJECT}:/project/${PROJECT}
       - ./npmscript:/data/pm2script
     environment:
       - PROJECT=${PROJECT}
     command: >
-      bash -c "cd /project/${PROJECT} && npm run build:ssr && pm2-runtime /data/pm2script/prod.ecosystem.config.js "
+      bash -c "ng new ${PROJECT} && cd ${PROJECT} && ng add @nguniversal/express-engine --skip-confirmation "

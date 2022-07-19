@@ -7,10 +7,10 @@ COPY entrypoint.sh .
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
-RUN mkdir -p /data/apps
-RUN cd /data/apps
+RUN mkdir -p /project
+RUN cd /project
 #RUN ng add @nguniversal/express-engine
 RUN mkdir -p /data/pm2script
-WORKDIR /data/apps
+WORKDIR /project
 EXPOSE 4200
 #CMD ["npm", "serve", "--port 4000"]

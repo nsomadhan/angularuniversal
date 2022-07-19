@@ -2,7 +2,7 @@
   apps : [
   {
     name      : "$PROJECT",
-    script    : "/data/apps/dist/$PROJECT/server/main.js",
+    script    : "/project/$PROJECT/dist/$PROJECT/server/main.js",
     instances : "2",
     exec_mode : "cluster",
     env: {
